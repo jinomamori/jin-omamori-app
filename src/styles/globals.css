@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --crimson: #8B0000;
+  --gold: #DAA520;
+  --washi: #FAF6F0;
+  --ink: #1A0A0A;
+}
+
+@layer base {
+  body {
+    @apply bg-washi text-ink font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-crimson text-white px-6 py-3 rounded-lg font-medium
+           hover:bg-crimson-700 active:bg-crimson-800
+           transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-crimson border-2 border-crimson px-6 py-3 rounded-lg font-medium
+           hover:bg-crimson hover:text-white
+           transition-colors duration-200;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-white px-6 py-3 rounded-lg font-medium
+           hover:bg-gold-700 active:bg-gold-800
+           transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden;
+  }
+
+  .card-wa {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden
+           border border-gold/20;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-crimson/30 focus:border-crimson
+           bg-white text-ink transition-colors duration-200;
+  }
+
+  .section-title {
+    @apply text-xl font-serif font-bold text-crimson relative
+           before:content-[''] before:absolute before:left-0 before:bottom-0
+           before:w-8 before:h-0.5 before:bg-gold;
+  }
+
+  .plan-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .wa-divider {
+    @apply border-t border-gold/30 my-4;
+  }
+
+  .wa-pattern-bg {
+    background-color: #8B0000;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(218, 165, 32, 0.1) 10px,
+      rgba(218, 165, 32, 0.1) 20px
+    );
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DAA520;
+  border-radius: 2px;
+}
