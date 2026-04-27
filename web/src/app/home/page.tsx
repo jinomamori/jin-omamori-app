@@ -95,20 +95,20 @@ export default function HomePage() {
                 <BenefitCard
                   title="提携店 料理1品サービス"
                   used={benefits?.dishService?.used ?? false}
-                  usedAt={benefits?.dishService?.usedAt}
+                  usedAt={benefits?.dishService?.usedAt ?? null}
                 />
                 {(plan === 'gold' || plan === 'vip') && (
                   <BenefitCard
                     title="居酒屋食事会"
                     used={benefits?.diningEvent?.used ?? false}
-                    usedAt={benefits?.diningEvent?.usedAt}
+                    usedAt={benefits?.diningEvent?.usedAt ?? null}
                   />
                 )}
                 {plan === 'vip' && (
                   <BenefitCard
                     title="焼肉食事会"
                     used={benefits?.yakinikuEvent?.used ?? false}
-                    usedAt={benefits?.yakinikuEvent?.usedAt}
+                    usedAt={benefits?.yakinikuEvent?.usedAt ?? null}
                   />
                 )}
               </div>

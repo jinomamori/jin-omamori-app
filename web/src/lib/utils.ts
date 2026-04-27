@@ -90,6 +90,16 @@ export function getPlanDisplayName(plan: string): string {
   return PLAN_INFO[plan as PlanType]?.name ?? plan;
 }
 
+// Shipping Address
+export interface ShippingAddress {
+  name: string;
+  postalCode: string;
+  prefecture: string;
+  city: string;
+  address: string;
+  phone: string;
+}
+
 // Cart utilities
 export interface CartItem {
   productId: string;
