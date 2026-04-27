@@ -22,8 +22,8 @@ export default function LandingPage() {
             <span className="text-gold font-semibold">特別な会員特典</span>をご用意しました。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/register" className="btn-gold text-lg px-8 py-4 rounded-xl font-bold shadow-lg">
-              今すぐ会員登録
+            <Link href="/subscribe" className="btn-gold text-lg px-8 py-4 rounded-xl font-bold shadow-lg">
+              プランを選んで始める
             </Link>
             <Link href="#plans" className="btn-secondary text-lg px-8 py-4 rounded-xl font-bold border-gold text-gold hover:bg-gold hover:text-white">
               プランを見る
@@ -155,9 +155,9 @@ export default function LandingPage() {
         <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4">
           今すぐ始めませんか？
         </h2>
-        <p className="text-white/80 mb-8">無料で会員登録して、特別な特典をお楽しみください</p>
-        <Link href="/register" className="btn-gold text-lg px-10 py-4 rounded-xl font-bold shadow-lg">
-          無料で会員登録
+        <p className="text-white/80 mb-8">あなたに合ったプランを選んで、特別な特典を楽しもう</p>
+        <Link href="/subscribe" className="btn-gold text-lg px-10 py-4 rounded-xl font-bold shadow-lg">
+          プランを選ぶ
         </Link>
       </section>
 
