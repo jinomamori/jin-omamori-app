@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AuthGuard from '@/components/AuthGuard';
 import BottomNav from '@/components/BottomNav';
 import { subscriptionsApi } from '@/lib/api';
 import { PLAN_INFO, formatPrice } from '@/lib/utils';
@@ -49,7 +48,7 @@ export default function SubscribePage() {
   }
 
   return (
-    <AuthGuard>
+    <>
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-10">
@@ -73,12 +72,12 @@ export default function SubscribePage() {
                 className={`card-wa border-2 ${color} relative overflow-hidden ${popular ? 'shadow-xl' : ''}`}
               >
                 {popular && (
-                  <div className="absolute top-0 left-0 right-0 bg-gold text-white text-xs font-bold text-center py-1">
+                  <div className="bg-gold text-white text-xs font-bold text-center py-1.5">
                     ★ 人気No.1
                   </div>
                 )}
 
-                <div className={`${headerColor} p-6 ${popular ? 'pt-8' : ''}`}>
+                <div className={`${headerColor} p-6`}>
                   <h2 className="text-xl font-serif font-bold text-ink mb-1">{info.name}</h2>
                   <div className="text-3xl font-bold text-crimson">
                     {formatPrice(info.price)}
@@ -140,6 +139,6 @@ export default function SubscribePage() {
         </div>
       </div>
       <BottomNav />
-    </AuthGuard>
+    </>
   );
 }
