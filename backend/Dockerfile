@@ -21,6 +21,7 @@ RUN npm ci --omit=dev
 
 COPY --from=builder /app/dist ./dist
 
-EXPOSE 3000
+# RailwayはPORT環境変数を動的に割り当てます
+EXPOSE ${PORT:-3000}
 
 CMD ["node", "dist/main"]

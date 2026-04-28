@@ -19,11 +19,16 @@ async function bootstrap() {
     }),
   );
 
-  // CORS設定（iOS アプリからのリクエスト許可）
+  // CORS設定（iOS アプリ・フロントエンドからのリクエスト許可）
+  const allowedOrigins = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim())
+    : ['https://jin-omamori-app-a9j9.vercel.app'];
+
   app.enableCors({
-    origin: process.env.ALLOWED_ORIGINS?.split(',') || '*',
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   });
 
   const port = process.env.PORT || 3000;

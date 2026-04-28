@@ -27,7 +27,6 @@ export const PLAN_INFO: Record<PlanType, {
     textColor: 'text-gold-600',
     features: [
       '会員証発行',
-      '提携店で料理1品サービス（月1回）',
       '居酒屋食事会（月1回）',
     ],
   },
@@ -39,8 +38,6 @@ export const PLAN_INFO: Record<PlanType, {
     textColor: 'text-purple-700',
     features: [
       '会員証発行',
-      '提携店で料理1品サービス（月1回）',
-      '居酒屋食事会（月1回）',
       '焼肉食事会（月1回）',
     ],
   },

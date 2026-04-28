@@ -112,7 +112,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <ul className="space-y-3 mb-8">
-                {['会員証発行', '提携店で料理1品サービス（月1回）', '居酒屋食事会（月1回）'].map((f) => (
+                {['会員証発行', '居酒屋食事会（月1回）'].map((f) => (
                   <li key={f} className="flex items-center gap-2 text-sm">
                     <span className="text-gold-600">✓</span>
                     <span>{f}</span>
@@ -135,7 +135,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <ul className="space-y-3 mb-8">
-                {['会員証発行', '提携店で料理1品サービス（月1回）', '居酒屋食事会（月1回）', '焼肉食事会（月1回）'].map((f) => (
+                {['会員証発行', '焼肉食事会（月1回）'].map((f) => (
                   <li key={f} className="flex items-center gap-2 text-sm">
                     <span className="text-purple-600">✓</span>
                     <span>{f}</span>

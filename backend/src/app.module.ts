@@ -22,11 +22,18 @@ import { EventRsvp } from './database/entities/event-rsvp.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT, 10) || 5432,
-      username: process.env.DB_USERNAME || 'jin_user',
-      password: process.env.DB_PASSWORD || 'jin_password',
-      database: process.env.DB_DATABASE || 'jin_omamori',
+      ...(process.env.DATABASE_URL
+        ? {
+            url: process.env.DATABASE_URL,
+            ssl: { rejectUnauthorized: false },
+          }
+        : {
+            host: process.env.DB_HOST || 'localhost',
+            port: parseInt(process.env.DB_PORT, 10) || 5432,
+            username: process.env.DB_USERNAME || 'jin_user',
+            password: process.env.DB_PASSWORD || 'jin_password',
+            database: process.env.DB_DATABASE || 'jin_omamori',
+          }),
       entities: [User, Subscription, BenefitUsage, Product, Order, OrderItem, PartnerStore, DiningEvent, EventRsvp],
       migrations: [__dirname + '/database/migrations/*{.ts,.js}'],
       synchronize: false,
