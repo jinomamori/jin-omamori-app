@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AuthGuard from '@/components/AuthGuard';
 import BottomNav from '@/components/BottomNav';
 import { subscriptionsApi } from '@/lib/api';
 import { PLAN_INFO, formatPrice } from '@/lib/utils';
@@ -49,7 +48,7 @@ export default function SubscribePage() {
   }
 
   return (
-    <AuthGuard>
+    <>
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-10">
@@ -140,6 +139,6 @@ export default function SubscribePage() {
         </div>
       </div>
       <BottomNav />
-    </AuthGuard>
+    </>
   );
 }
